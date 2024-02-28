@@ -5,6 +5,13 @@
             "SPR\\ServiceSDK\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SPR\\ServiceSDK\\Glide\\Providers\\GlideAppProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "ABHIRAJ",
