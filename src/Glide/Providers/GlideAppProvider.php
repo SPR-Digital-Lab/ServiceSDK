@@ -1,6 +1,6 @@
 <?php
 
-namespace SPR\ServiceSDK\Glide\Provider;
+namespace SPR\ServiceSDK\Glide\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use SPR\ServiceSDK\Glide\Commands\GlidePullCommand;
