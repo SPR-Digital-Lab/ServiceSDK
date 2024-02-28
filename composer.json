@@ -1,0 +1,18 @@
+{
+    "name": "spr/service-sdk",
+    "autoload": {
+        "psr-4": {
+            "SPR\\ServiceSDK\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ABHIRAJ",
+            "email": "abhirajj52@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.75"    
+    }
+}
