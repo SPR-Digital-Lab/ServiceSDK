@@ -71,7 +71,7 @@ class GlidePushCommand extends Command
             }
             
         } else {
-            $localFolder = base_path('glide/files');
+            $localFolder = base_path('glide');
             $files = scandir($localFolder);
 
             foreach ($files as $file) {
