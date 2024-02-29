@@ -42,7 +42,12 @@ class GlidePullCommand extends Command
 
         if ($file) {
             $remoteFolder = '/' . $file . '.blade.php';
-            $localFolder = base_path('glide/');
+
+             $localFolder = base_path('glide/');
+
+            if (!file_exists($localFolder)) {
+                mkdir($localFolder, 0777, true);
+            }
 
             if (Storage::disk('glide_ftp')->exists($remoteFolder)) {
 
