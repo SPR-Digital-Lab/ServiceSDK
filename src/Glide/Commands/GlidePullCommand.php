@@ -65,23 +65,27 @@ class GlidePullCommand extends Command
             }
         } else {
             $remoteFolder = '/';
-            $localFolder = base_path('glide/');
-
-            if (!file_exists($localFolder)) {
-                mkdir($localFolder, 0777, true);
+            $localBaseFolder = base_path('glide/');
+        
+            if (!file_exists($localBaseFolder)) {
+                mkdir($localBaseFolder, 0777, true);
             }
-
+        
             $files = Storage::disk('glide_ftp')->allFiles($remoteFolder);
-
-            $phpFiles = array_filter($files, function ($file) {
-                return pathinfo($file, PATHINFO_EXTENSION) === 'php';
-            });
-
-            foreach ($phpFiles as $file) {
+        
+            foreach ($files as $file) {
+                $remoteFilePath = dirname($file); 
+                $localFolderPath = $localBaseFolder . '/' . $remoteFilePath;
+                $localFilePath = $localBaseFolder . '/' . $file;
+        
+                if (!file_exists($localFolderPath)) {
+                    mkdir($localFolderPath, 0777, true); 
+                }
+        
                 $contents = Storage::disk('glide_ftp')->get($file);
-                $localFilePath = $localFolder . '/' . basename($file);
                 file_put_contents($localFilePath, $contents);
             }
+        
             $this->info('Folder downloaded successfully.');
         }
     }
