@@ -1,5 +1,5 @@
 {
-    "name": "spr/service-sdk",
+    "name": "spr-digital-lab/service-sdk",
     "autoload": {
         "psr-4": {
             "SPR\\ServiceSDK\\": "src/"
