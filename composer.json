@@ -9,7 +9,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SPR\\ServiceSDK\\Glide\\Providers\\GlideAppProvider"
+                "SPR\\ServiceSDK\\Glide\\Providers\\GlideAppProvider",
+                "SPR\\ServiceSDK\\Arc\\ArcProvider",
             ]
         }
     },
