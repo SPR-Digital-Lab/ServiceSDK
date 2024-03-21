@@ -1,6 +1,6 @@
 {
     "name": "spr-digital-lab/service-sdk",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "autoload": {
         "psr-4": {
             "SPR\\ServiceSDK\\": "src/"
