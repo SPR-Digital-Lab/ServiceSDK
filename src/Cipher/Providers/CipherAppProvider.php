@@ -13,6 +13,7 @@ class CipherAppProvider extends ServiceProvider
      *
      * @return void
      */
+    
     protected function register()
     {
         CipherService::RegisterHandler();
