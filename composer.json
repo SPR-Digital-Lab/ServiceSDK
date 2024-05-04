@@ -10,7 +10,8 @@
         "laravel": {
             "providers": [
                 "SPR\\ServiceSDK\\Glide\\Providers\\GlideAppProvider",
-                "SPR\\ServiceSDK\\Arc\\ArcProvider"
+                "SPR\\ServiceSDK\\Arc\\ArcProvider",
+                "SPR\\ServiceSDK\\Cipher\\Providers\\CipherAppProvider"
             ]
         }
     },
