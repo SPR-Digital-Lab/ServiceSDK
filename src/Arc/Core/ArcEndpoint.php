@@ -27,7 +27,20 @@ abstract class ArcEndpoint extends Controller implements IArcDefinition,IArcEndp
     {
         $query = Validator::make($request->query(), $this->query())->validate();
         $data = Validator::make($request->post(), $this->data())->validate();
-
-        return $this->endpoint($query,$data);
+        $d = [];
+        try {
+            $d = $this->endpoint($query, $data);
+            $d['action'] = true;
+        } catch (ValidationException $exception) {
+            $d['action'] = false;
+            $d['reason'] = 'VALIDATION';
+            $d['exception'] = $exception->getMessage();
+            $d['errors'] = $exception->validator->errors();
+        } catch (\Throwable $exception) {
+            $d['action'] = false;
+            $d['reason'] = (new \ReflectionClass($exception))->getShortName();
+            $d['exception'] = $exception->getMessage();
+        }
+        return $d;
     }
 }
