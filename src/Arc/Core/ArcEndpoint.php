@@ -9,6 +9,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use SPR\ServiceSDK\Arc\Core\IArcDefinition;
 use SPR\ServiceSDK\Arc\Core\IArcEndpoint;
 
