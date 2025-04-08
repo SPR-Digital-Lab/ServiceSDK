@@ -13,11 +13,11 @@ use Illuminate\Validation\ValidationException;
 use SPR\ServiceSDK\Arc\Core\IArcDefinition;
 use SPR\ServiceSDK\Arc\Core\IArcEndpoint;
 
-abstract class ArcEndpoint extends Controller implements IArcDefinition,IArcEndpoint
+abstract class ArcEndpoint extends Controller implements IArcDefinition, IArcEndpoint
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    abstract public function authorise():bool;
+    abstract public function authorise(): bool;
 
     abstract public function query(): array;
 
@@ -26,10 +26,10 @@ abstract class ArcEndpoint extends Controller implements IArcDefinition,IArcEndp
 
     public function __invoke(Request $request)
     {
-        $query = Validator::make($request->query(), $this->query())->validate();
-        $data = Validator::make($request->post(), $this->data())->validate();
-        $d = [];
         try {
+            $query = Validator::make($request->query(), $this->query())->validate();
+            $data = Validator::make($request->post(), $this->data())->validate();
+            $d = [];
             $d = $this->endpoint($query, $data);
             $d['action'] = true;
         } catch (ValidationException $exception) {
