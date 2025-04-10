@@ -7,4 +7,4 @@
     </div>
 </div> --}}
 
-@include('glide.blocks.notice',['message'=>" Oops! this seems to be empty."])
+@include('sdk:ui.blocks.notice',['message'=>" Oops! this seems to be empty."])

@@ -1,5 +1,5 @@
 @if (isset($this) && isset($this->__confirmation) && $this->__confirmation)
-    @component('glide.blocks.dialog')
+    @component('sdk:ui.blocks.dialog')
         @slot('title', $this->__confirmation['title'])
         @slot('description', $this->__confirmation['description'])
         @slot('submit', $this->__confirmation['success'])

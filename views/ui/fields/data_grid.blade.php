@@ -12,7 +12,7 @@
     {{-- @endisset --}}
     @isset($opt)
         @if (count($opt) == 0)
-            @include('glide.blocks.empty')
+            @include('sdk:ui.blocks.empty')
         @endif
         @foreach ($opt as $k => $v)
             <div

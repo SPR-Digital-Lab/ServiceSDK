@@ -2,8 +2,8 @@
     $rid = uniqid('comp');
 @endphp
 
-@include('glide.blocks.confirmation')
-@include('glide.blocks.editor')
+@include('sdk::ui.blocks.confirmation')
+@include('sdk::ui.blocks.editor')
 
 @if (isset($smartBackOverride) && $smartBackOverride)
     <script></script>

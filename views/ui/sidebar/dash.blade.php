@@ -1,13 +1,13 @@
 {{-- mobile --}}
 <div class="overflow-auto bg-white position-absolute start-0 h-100 animated-slow d-block d-sm-none" x-cloak style="width: 14rem;z-index:150"
 :style='runtime.sidebar.visible?{}:{marginLeft:"-14rem"}' :class="runtime.sidebar.visible?'shadow':''">
-@include('glide.menu.mainmenu',['menu'=>$menu])
+@include('sdk::ui.menu.mainmenu',['menu'=>$menu])
 </div>
 
 {{-- desktop --}}
 <div class="flex-shrink-0 overflow-auto bg-white shadow-sm h-100 border-end animated-slow d-none d-sm-block" x-cloak style="width: 14rem;z-index:150"
 :style="runtime.sidebar.visible?{}:{marginLeft:'-14rem'}">
-@include('glide.menu.mainmenu',['menu'=>$menu])
+@include('sdk::ui.menu.mainmenu',['menu'=>$menu])
 </div>
 
 <div :class="runtime.sidebar.visible?'d-block d-sm-none':'d-none'"

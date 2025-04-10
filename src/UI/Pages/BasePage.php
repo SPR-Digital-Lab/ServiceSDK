@@ -9,15 +9,17 @@ use SPR\ServiceSDK\UI\Menu\MenuItem;
 
 abstract class BasePage extends Component
 {
-    public $layout = 'glide.layouts.guest';
+    public $layout = 'sdk::ui.layouts.guest';
 
-    public $defaultDailogComponent = 'glide.blocks.dialog';
-    public $dailogComponent = 'glide.blocks.dialog';
+    public $defaultDailogComponent = 'sdk::ui.blocks.dialog';
+    public $dailogComponent = 'sdk::ui.blocks.dialog';
 
     public $dataEditorFields;
     public $dataEditorFiles;
 
     public $__header = null;
+    public $search = false;
+    public $user_spec = [];
 
     public $__confirmation = null;
 
@@ -27,6 +29,7 @@ abstract class BasePage extends Component
 
     public function setHeader($title, $info = null, $success = null, $danger = null, $path = [], $counters = [])
     {
+
         $this->__header = [
             'title' => $title,
             'info' => $info,
