@@ -41,7 +41,6 @@ class GlidePushCommand extends Command
         $file = $this->argument('file');
         if ($file) {
             $localFilePath = base_path('glide/' . $file . '.blade.php');
-
             if (!file_exists($localFilePath)) {
                 $this->error("File '$file' does not exist locally.");
                 return;

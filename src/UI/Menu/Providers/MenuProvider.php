@@ -1,10 +1,10 @@
 <?php
 
-namespace SPR\ServiceSDK\Menu\Providers;
+namespace SPR\ServiceSDK\UI\Menu\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use SPR\ServiceSDK\Menu\MenuItem;
-use SPR\ServiceSDK\Menu\MenuSystem;
+use SPR\ServiceSDK\UI\Menu\MenuItem;
+use SPR\ServiceSDK\UI\Menu\MenuSystem;
 
 class MenuProvider extends ServiceProvider
 {
@@ -14,8 +14,6 @@ class MenuProvider extends ServiceProvider
     {
         $this->app->singleton(MenuSystem::class, function ($app) {
             $system = new MenuSystem();
-
-
             (function (MenuItem $menu) {
                 $menuFile = base_path("menu.php");
                 if (file_exists($menuFile)) {

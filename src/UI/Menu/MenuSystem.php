@@ -1,6 +1,6 @@
 <?php
 
-namespace SPR\ServiceSDK\Menu;
+namespace SPR\ServiceSDK\UI\Menu;
 use Illuminate\Support\Str;
 
 class MenuSystem
